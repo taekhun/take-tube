@@ -1,0 +1,22 @@
+{
+  "name": "take-tube",
+  "version": "1.0.0",
+  "description": "Cloning Youtube with Vanilla and Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taekhun/take-tube.git"
+  },
+  "author": "Taekhun Nam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taekhun/take-tube/issues"
+  },
+  "homepage": "https://github.com/taekhun/take-tube#readme",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
