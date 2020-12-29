@@ -12,16 +12,19 @@ import routes from "./routes";
 
 const app = express();
 
-// Middlewares 순서대로 실행
+
+
+// Middlewares (top-bottom)
+app.use(helmet()); // 보안
+app.set("view engine", "pug"); //View-engine setting
 app.use(cookieParser()); // 쿠키관리
 app.use(bodyParser.json()); // request의 form, json 관리
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet()); // 보안
 app.use(morgan("dev")); // 접속한 log관리
 
-app.use(routes.home, globalRouter); // "/~"에 접속하면 => globalRouter를 찾음
-app.use(routes.users, userRouter); // "/users"에 접속하면 => userRouter를 찾음
-app.use(routes.videos, videoRouter);
+app.use(routes.home, globalRouter); // "/~"에 접속하면 => globalRouter에서 찾음
+app.use(routes.users, userRouter); // "/users/"에 접속하면 => userRouter에서 찾음
+app.use(routes.videos, videoRouter); // "/videos/"에 접속하면 => videoRouter에서 찾음
 
 export default app;
 //딴데서 import하면 app object를 내보냄
