@@ -14,7 +14,8 @@ import globalRouter from "./routers/globalRouter";
 const app = express();
 
 // Middlewares (top-bottom)
-app.use(helmet()); // 보안
+// app.use(helmet()); // 보안
+app.use( helmet({ contentSecurityPolicy: false })); 
 app.set("view engine", "pug"); //View-engine setting
 app.use(cookieParser()); // 쿠키관리
 app.use(bodyParser.json()); // request의 form, json 관리
