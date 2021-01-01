@@ -1,7 +1,10 @@
 //1st arg : 렌더링 할 템플릿
 //2nd arg : 템플릿에 추가할 정보가 담긴 객체
+import {videos} from "../db"
 
-export const home = (req, res) => res.render("home", {pageTitle : "Home"});
+export const home = (req, res) => {
+    res.render("home", {pageTitle : "Home", videos });
+}
 
 export const search = (req, res) => {
     const {query: {term : searchingBy}} = req;
