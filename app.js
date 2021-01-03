@@ -15,8 +15,9 @@ const app = express();
 
 // Middlewares (top-bottom)
 // app.use(helmet()); // 보안
-app.use( helmet({ contentSecurityPolicy: false })); 
+app.use(helmet({ contentSecurityPolicy: false }));
 app.set("view engine", "pug"); //View-engine setting
+app.use("/uploads", express.static("uploads")); // "/uploads"로 가면 => uploads directory 안으로 들어감
 app.use(cookieParser()); // 쿠키관리
 app.use(bodyParser.json()); // request의 form, json 관리
 app.use(bodyParser.urlencoded({ extended: true }));

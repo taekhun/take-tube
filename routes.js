@@ -27,12 +27,11 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  userDetail: (id)=>{
-    if(id){
-      return `/users/${id}`
-    }
-    else{
-      return USER_DETAIL
+  userDetail: (id) => {
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return USER_DETAIL;
     }
   },
   editProfile: EDIT_PROFILE,
@@ -40,14 +39,19 @@ const routes = {
   videos: VIDEOS,
   upload: UPLOAD,
   videoDetail: (id) => {
-    if(id){
-      return `/videos/${id}`
-    }
-    else {
+    if (id) {
+      return `/videos/${id}`;
+    } else {
       return VIDEO_DETAIL;
     }
   },
-  editVideo: EDIT_VIDEO,
+  editVideo: (id) => {
+    if (id) {
+      return `/videos/${id}/edit`;
+    } else {
+      return EDIT_VIDEO;
+    }
+  },
   deleteVideo: DELETE_VIDEO,
 };
 
