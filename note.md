@@ -43,3 +43,7 @@ const term = req.query.term
 1. HTML(PUG)에서 form + input 으로 정보를 보낸다. 여기서 form태그는 get방식이어야하며, input태그의 name값이 쿼리이름이 된다.
 2. Controller에서, req.query << 로 input의 name값으로 보낸 데이터를 받는다.
 3. 그리고 위 데이터를 다시 PUG로 전달해서 받아준다.
+
+# 3.5
+async : JS야 이 func의 어떤 부분(await)은 꼭 기다려야 해~
+  await : 다음 과정이 끝날 때 까지 잠시만 기다려줘~
