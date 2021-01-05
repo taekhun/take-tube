@@ -47,5 +47,3 @@ const term = req.query.term
 # 3.5
 async : JS야 이 func의 어떤 부분(await)은 꼭 기다려야 해~
   await : 다음 과정이 끝날 때 까지 잠시만 기다려줘~
-
-# 3.9까지함~ 아직 수정된거 update 불가
