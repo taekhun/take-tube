@@ -24,7 +24,11 @@ const CookieStore = MongoStore(session);
 console.log(process.env.COOKIE_SECRET);
 // Middlewares (top-bottom)
 // app.use(helmet()); // 보안
-app.use(helmet({ contentSecurityPolicy: false }));
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 app.set("view engine", "pug"); //View-engine setting
 app.use("/uploads", express.static("uploads")); // "/uploads"로 가면 => uploads directory 안으로 들어감
 app.use("/static", express.static("static"));
