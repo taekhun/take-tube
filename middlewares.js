@@ -3,8 +3,9 @@
 import multer from "multer";
 import routes from "./routes";
 
+//multer : img to url
 const multerVideo = multer({ dest: "uploads/videos/" });
-// 목적 경로
+const multerAvatar = multer({ dest: "uploads/avatars/" });
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "take-tube";
@@ -14,6 +15,7 @@ export const localsMiddleware = (req, res, next) => {
 };
 
 //부적절한 Route 방지
+//공용 버전
 export const onlyPublic = (req, res, next) => {
   if (req.user) {
     res.redirect(routes.home);
@@ -22,6 +24,7 @@ export const onlyPublic = (req, res, next) => {
   }
 };
 
+//로그인 버전
 export const onlyPrivate = (req, res, next) => {
   if (req.user) {
     next();
@@ -31,3 +34,4 @@ export const onlyPrivate = (req, res, next) => {
 };
 
 export const uploadVideo = multerVideo.single("videoFile");
+export const uploadAvatar = multerAvatar.single("avatar");
